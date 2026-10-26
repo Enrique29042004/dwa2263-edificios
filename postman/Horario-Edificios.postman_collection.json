@@ -1,0 +1,60 @@
+{
+  "info": {
+    "name": "Horario - API Edificios",
+    "description": "CRUD de Edificios (Laravel). Cambia la variable base_url si usas 'php artisan serve' (http://127.0.0.1:8000/api).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost/api" }
+  ],
+  "item": [
+    {
+      "name": "Listar edificios",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{base_url}}/edificios", "host": ["{{base_url}}"], "path": ["edificios"] }
+      }
+    },
+    {
+      "name": "Crear edificio",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Edificio C\"\n}" },
+        "url": { "raw": "{{base_url}}/edificios", "host": ["{{base_url}}"], "path": ["edificios"] }
+      }
+    },
+    {
+      "name": "Obtener un edificio",
+      "request": {
+        "method": "GET",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{base_url}}/edificios/1", "host": ["{{base_url}}"], "path": ["edificios", "1"] }
+      }
+    },
+    {
+      "name": "Actualizar edificio",
+      "request": {
+        "method": "PUT",
+        "header": [
+          { "key": "Accept", "value": "application/json" },
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": { "mode": "raw", "raw": "{\n  \"nombre\": \"Edificio C Modificado\"\n}" },
+        "url": { "raw": "{{base_url}}/edificios/1", "host": ["{{base_url}}"], "path": ["edificios", "1"] }
+      }
+    },
+    {
+      "name": "Eliminar edificio",
+      "request": {
+        "method": "DELETE",
+        "header": [{ "key": "Accept", "value": "application/json" }],
+        "url": { "raw": "{{base_url}}/edificios/1", "host": ["{{base_url}}"], "path": ["edificios", "1"] }
+      }
+    }
+  ]
+}
